@@ -305,7 +305,10 @@ KAFKA_BOOTSTRAP_SERVER: str = config(
 KAFKA_CLIENT_ID: str = config("KAFKA_CLIENT_ID", cast=str, default="kafka-python")
 KAFKA_GROUP_ID: str = config("KAFKA_GROUP_ID", cast=str, default="kafka-python")
 KAFKA_TOPICS = {
-    "vertc-user": "apps.user.kafka_consumer.user_consumer",
+    # "vertc-user": "apps.user.kafka_consumer.user_consumer",
+    "init_benchmark_tests": "apps.main.consumer.init_benchmark_tests_consumer",
+    "medium_benchmark_tests": "apps.main.consumer.medium_benchmark_tests_consumer",
+    "large_benchmark_tests": "apps.main.consumer.large_benchmark_tests_consumer",
 }
 
 

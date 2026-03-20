@@ -1,4 +1,4 @@
-FROM python:3.12-bullseye
+FROM python:3.12-trixie
 ENV PYTHONUNBUFFERED 1
 ENV PYTHONDONTWRITEBYTECODE 1
 
@@ -12,17 +12,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libssl-dev \
     zlib1g-dev \
     libsasl2-dev \
+    librdkafka-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Build librdkafka em WORKDIR separado
-WORKDIR /usr/src/librdkafka
-RUN git clone https://github.com/edenhill/librdkafka.git . \
-    && git checkout v1.9.2 \
-    && ./configure \
-    && make \
-    && make install \
-    && ldconfig \
-    && rm -rf /usr/src/librdkafka
 
 # Criar usuário não-root
 RUN groupadd -r appgroup && useradd -r -g appgroup appuser

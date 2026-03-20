@@ -1,1 +1,11 @@
-# from django.contrib import admin
+from django.contrib import admin
+
+from apps.main.models import BenchmarkTest
+
+
+@admin.register(BenchmarkTest)
+class BenchmarkTestAdmin(admin.ModelAdmin):
+    list_display = ("id", "test_type", "time_processing", "is_finished")
+    search_fields = ("test_type",)
+    list_filter = ("test_type", "is_finished")
+    ordering = ("-created_at",)

@@ -1,9 +1,9 @@
 coverage==7.9.1
-django==5.2.11
+django~=5.2.12
 django-filter==25.1
 djangorestframework==3.16.0
 djangorestframework-simplejwt==5.5.0
-flake8==7.2.0
+flake8==7.3.0
 gunicorn==23.0.0
 isort==6.0.1
 psycopg2-binary==2.9.10
@@ -16,10 +16,10 @@ pytest-factoryboy==2.7.0
 boto3==1.38.36
 django-storages==1.14.6
 django-q2==1.8.0
-black==25.1.0
+black==26.3.1
 django-debug-toolbar==5.2.0
 git+https://github.com/akaytatsu/django-factory-generator.git
-git+https://github.com/vert-capital/django_kafka.git
+git+https://github.com/caiofariavert/django_5_kafka.git@v2.0.0-alpha.2
 freezegun==1.5.2
 requests-mock==1.10.0
 pip-upgrader
