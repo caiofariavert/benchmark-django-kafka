@@ -34,6 +34,18 @@ class BenchmarkTest(models.Model):
             return (self.ended_consumer_at - self.init_consumer_at).total_seconds()
         return None
 
+    @property
+    def full_init_consumer_at(self):
+        if self.init_consumer_at:
+            return self.init_consumer_at.strftime("%Y-%m-%d %H:%M:%S")
+        return None
+
+    @property
+    def full_ended_consumer_at(self):
+        if self.ended_consumer_at:
+            return self.ended_consumer_at.strftime("%Y-%m-%d %H:%M:%S")
+        return None
+
     def __str__(self):
         return self.test_type
 

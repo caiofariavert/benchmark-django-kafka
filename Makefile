@@ -205,3 +205,6 @@ beachmark-test: show_env
 
 multitopic-test: show_env
 	docker compose ${DOCKER_COMPOSE_FILE} exec app ${PYTHON_EXEC} manage.py multitopic_test
+
+build: stop
+	docker compose ${DOCKER_COMPOSE_FILE} up -d --build

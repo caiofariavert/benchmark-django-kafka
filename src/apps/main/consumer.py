@@ -24,7 +24,7 @@ def large_benchmark_tests_consumer(consumer: Consumer, msg: Message):
 
 def consumer_logic(consumer: Consumer, msg: Message):
     init = timezone.now()
-    data = json.loads(msg.value.decode())
+    data = json.loads(msg.value().decode())
     benchmark_id = data["id"]
     logger.info(
         f"Received benchmark test {benchmark_id} of type {data['test_type']} from Kafka!"

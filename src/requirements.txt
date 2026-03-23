@@ -19,7 +19,7 @@ django-q2==1.8.0
 black==26.3.1
 django-debug-toolbar==5.2.0
 git+https://github.com/akaytatsu/django-factory-generator.git
-git+https://github.com/caiofariavert/django_5_kafka.git@v2.0.0-alpha.2
+git+https://github.com/caiofariavert/django_5_kafka.git@fcca684
 freezegun==1.5.2
 requests-mock==1.10.0
 pip-upgrader
